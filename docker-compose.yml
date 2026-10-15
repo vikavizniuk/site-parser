@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: site-parser
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/siteparser         
+    environment:
+      - DEBUG=1
+    restart: unless-stopped

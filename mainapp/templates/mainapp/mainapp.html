@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="https://unpkg.com"></script>
+<h1>Enter the link to the home page:</h1>
+<form method="POST" action="" hx-post="{% url 'mainapp' %}" hx-target="#result-div">
+    {% csrf_token %}
+    <input type="text" name="inputURL">
+    <button type="submit">Submit</button>
+    {% if error %} 
+        {{ error }}
+    {% endif %}
+</form>
+
+
+
+</body>
+</html>
